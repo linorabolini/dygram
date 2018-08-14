@@ -1,6 +1,6 @@
 {
   "name": "dygram",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Dynamic Diagrams",
   "main": "index.js",
   "dependencies": {
@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/linorabolini/dgram.git"
+    "url": "git+https://github.com/linorabolini/dygram.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/linorabolini/dgram/issues"
+    "url": "https://github.com/linorabolini/dygram/issues"
   },
-  "homepage": "https://github.com/linorabolini/dgram#readme"
+  "homepage": "https://github.com/linorabolini/dygram#readme"
 }

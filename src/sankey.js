@@ -155,27 +155,26 @@ let __queue = []
 let __name = ""
 let end = () => {
     const dir = "./charts"
-    fs.ensureDir(dir).then(() => {
-        const dupNodes = _.flatMap(__queue, link => {
-            return [{ name: link.source }, { name: link.target }]
-        })
-
-        const nodes = _.uniqBy(dupNodes, "name")
-        const links = _.map(__queue, link => {
-            return {
-                source: nodes.findIndex(node => node.name === link.source),
-                target: nodes.findIndex(node => node.name === link.target),
-                value: link.value
-            }
-        })
-        let n = chart({ nodes, links })
-
-        let div = document.createElement("div")
-        div.append(n)
-
-        fs.writeFileSync(`${dir}/${__name}.svg`, div.innerHTML)
-        __queue = []
+    fs.ensureDirSync(dir)
+    const dupNodes = _.flatMap(__queue, link => {
+        return [{ name: link.source }, { name: link.target }]
     })
+
+    const nodes = _.uniqBy(dupNodes, "name")
+    const links = _.map(__queue, link => {
+        return {
+            source: nodes.findIndex(node => node.name === link.source),
+            target: nodes.findIndex(node => node.name === link.target),
+            value: link.value
+        }
+    })
+    let n = chart({ nodes, links })
+
+    let div = document.createElement("div")
+    div.append(n)
+
+    fs.writeFileSync(`${dir}/${__name}.svg`, div.innerHTML)
+    __queue = []
 }
 let push = (...args) => __queue.push(...args)
 
