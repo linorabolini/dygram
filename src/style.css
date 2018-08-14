@@ -1,0 +1,7 @@
+polygon,
+circle,
+rect {
+    stroke: none !important;
+    fill: #ace7ff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
