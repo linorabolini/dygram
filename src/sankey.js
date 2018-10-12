@@ -29,8 +29,6 @@ const chart = data => {
     const { nodes, links } = sankey(data)
 
     svg.append("g")
-        // .attr("stroke", "#000")
-        // .attr("stroke", "rgba(0,0,0,0.3)")
         .selectAll("rect")
         .data(nodes)
         .enter()
@@ -66,12 +64,6 @@ const chart = data => {
         .attr("offset", "0%")
         .attr("stop-color", d => color(d.source.name))
 
-    // gradient
-    //     .append("stop")
-    //     .attr("offset", "50%")
-    //     .attr("stop-opacity", 1)
-    //     .attr("stop-color", d3.interpolateLab("steelblue", "brown")(0.5))
-
     gradient
         .append("stop")
         .attr("offset", "100%")
@@ -94,7 +86,7 @@ const chart = data => {
         .append("text")
         .attr("y", d => (d.y1 + d.y0) / 2)
         .attr("text-anchor", "middle")
-        .each(function (d) {
+        .each(function(d) {
             var n = d.name
                 .replace(/-/g, "- ")
                 .replace(/_/g, "_ ")
@@ -179,16 +171,16 @@ let end = () => {
 let push = (...args) => __queue.push(...args)
 
 module.exports = {
-    begin: (name) => {
+    begin: name => {
         __name = name
     },
-    width: (value) => {
+    width: value => {
         width = value || width
     },
-    height: (value) => {
+    height: value => {
         height = value || height
     },
-    connect: (source, target, value = 10) => {
+    link: (source, target, value = 10) => {
         return push({
             source,
             target,
