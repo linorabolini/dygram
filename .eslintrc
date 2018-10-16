@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest/globals": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "prettier/prettier": "error",
+        "generator-star-spacing": 1,
+        "babel/new-cap": 1,
+        "no-console": 0,
+        "object-shorthand": 1,
+        "no-await-in-loop": 1,
+        "react/jsx-uses-react": 2,
+        "no-useless-escape": 0,
+        "react/jsx-uses-vars": 2,
+        "react/react-in-jsx-scope": 2,
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+    },
+    "plugins": ["babel", "react", "prettier", "jest"],
+    "extends": ["prettier"]
+}
